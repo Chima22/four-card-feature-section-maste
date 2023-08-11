@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root{
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --veryDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue: hsl(229, 6%, 66%);
+    --veryLightGray: hsl(0, 0%, 98%);
+    --white: white;
+}
+
+ body{
+    margin: 1rem;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--veryLightGray);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+ }
+ /* header */
+ header{
+    text-align: center;
+ }
+  h2{
+    font-size: 150%;
+    font-weight: 500;
+    color: var(--grayishBlue);
+ }
+ h1{
+    font-weight: 200;
+    font-size: 2rem;
+    margin: 0;
+ }
+ p{
+    font-size: 80%;
+    font-weight: 400;
+    color: var(--grayishBlue);
+ } 
+/* grid */
+
+.grid{
+    display: grid;
+    grid-template-columns: "one" "two" " three" "four";
+} 
+
+.grid > .card:nth-child(1){
+ grid-area: one;
+ grid-row-start: 2;
+ border-top: 8px solid var(--Cyan);
+}
+.grid > .card:nth-child(2) {
+    grid-area: two;
+    border-top: 8px solid var(--Red);
+  }
+  .grid > .card:nth-child(3) {
+    grid-area: three;
+    border-top: 8px solid var(--Orange);
+  }
+  .grid > .card:nth-child(4) {
+    grid-area: four;
+    grid-row-start: 2;
+    border-top: 8px solid var(--Blue);
+  }
+  /* card */
+  .card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px ;
+    position: relative;
+    box-shadow: hsla(234, 12%, 34%, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
+  .card > pre {
+    padding-right: 2rem;
+  }
+   
+   .img{
+    position: absolute;
+    left: 76%;
+    top:65%;
+   }
+   
+  
+ /* Destop */
+  @media only screen and (width >= 1165px) {
+    .grid {
+      grid-template-areas: "one two four" "one two four" "one three four";
+    }
+    .card {
+        width: 358px;
+        height: 200px;
+      }
+      
+  }  
+   /* mobile */
+  @media only screen and (width <= 1165px) {
+    .grid {
+        display: block;
+      }
+    .card {
+        width: 323px;
+        height: 200px;
+        margin: 10px 20px;
+      }
+      
+      .card > pre {
+        padding-right: 2rem;
+        font-weight: 400;
+      }
+    
+    
+
+}
+  
